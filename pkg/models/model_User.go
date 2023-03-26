@@ -9,7 +9,7 @@ type Model_User struct {
 }
 
 type Model_Login_Response struct{
-    Login string `json:"login" `
+    Login bool `json:"login" `
 }
 
 type Model_Login_Input struct{

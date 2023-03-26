@@ -37,9 +37,9 @@ claims, err := functions.DecodeJWT(c)
             return nil,err
         }
 		if DecryptedObj.Password == inputObj.Password{
-			return &models.Model_Login_Response{Login: "True"},nil
+			return &models.Model_Login_Response{Login: true},nil
 		}else {
-			return &models.Model_Login_Response{Login: "False"},nil
+			return &models.Model_Login_Response{Login: false},nil
 		}
         
         
