@@ -53,6 +53,7 @@ func FN_Default(g *echo.Group) {
     g.DELETE("/api/DeleteSummery", DeleteSummeryController)
     g.GET("/api/FindSummery", FindSummeryController)
     g.GET("/api/FindallSummery", FindallSummeryController)
+    g.GET("/api/Login", LoginVerificationController)
 
 	g.GET("/api/health-check", HealthCheck)
 	g.GET("/swagger/*", echoSwagger.WrapHandler)

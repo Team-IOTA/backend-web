@@ -8,10 +8,10 @@ import (
     "go.mongodb.org/mongo-driver/bson"
 )
 
-func FindUser (objectid string) (*models.Model_User, error) {
+func FindUser (username string) (*models.Model_User, error) {
 	var object models.Model_User
 
-	err := connections.DATABASE.Collection("Users").FindOne(context.Background(), bson.M{"objectid": objectid}).Decode(&object)
+	err := connections.DATABASE.Collection("Users").FindOne(context.Background(), bson.M{"username": username}).Decode(&object)
 	if err != nil {
     	return nil, err
     }

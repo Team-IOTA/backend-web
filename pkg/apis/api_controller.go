@@ -194,7 +194,16 @@ func FindallSummeryController(c echo.Context) error {
 	} else {
 		return c.JSON(http.StatusOK, result)
 	}
-	}
+}
+func LoginVerificationController(c echo.Context) error {
+
+	result, err := LoginVerificationApi(c)
+	if err != nil {
+	return c.JSON(http.StatusInternalServerError, err.Error())
+} else {
+	return c.JSON(http.StatusOK, result)
+}
+}
 
 
 func HealthCheck(c echo.Context) error {
