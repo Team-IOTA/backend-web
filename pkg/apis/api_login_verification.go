@@ -30,7 +30,7 @@ claims, err := functions.DecodeJWT(c)
  
 	returnValue, err := dbOps.FindUser(inputObj.UserName)
     if err != nil {
-        return nil, err
+        return &models.Model_Login_Response{Login: false}, nil
     }
     DecryptedObj,err :=  util.GetDecryptObject(*returnValue)
         if err != nil {
